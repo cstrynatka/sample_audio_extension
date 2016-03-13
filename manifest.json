@@ -1,0 +1,26 @@
+{
+	"name": "Sample Audio Chrome Extension",
+	"description": "Testing out the code required to autoplay an audio file when a page detects a string
+	has been entered.",
+	"version": "1.0",
+	"manifest_version": 2,
+	"update_url": "https://clients2.google.com/service/update2.crx",
+
+	"background": {
+		"page": "background.html"
+	},
+
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+
+	"content_scripts": [
+		{
+			"run_at": "document_end",
+			"matches": ["<all_urls>"],
+			"js": ["contentScript.js"]
+			}
+		]
+}
